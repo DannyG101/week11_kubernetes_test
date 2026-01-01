@@ -9,7 +9,7 @@ spec:
   - name: streamlit-app
     image: dannygoldberg/streamlit-app:v2
     ports:
-      - containerPort: 8501
+    - containerPort: 8501
 
 
 
