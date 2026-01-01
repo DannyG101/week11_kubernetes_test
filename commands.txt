@@ -1,0 +1,62 @@
+git clone https://github.com/DannyG101/week11_kubernetes_test.git
+
+git checkout -b docker 
+
+docker build -t dannygoldberg/streamlit-app:v2 .
+
+docker run -d --name test-run -p 8501:8501 dannygoldberg/streamlit-app:v2
+
+docker ps
+
+docker push dannygoldberg/streamlit-app:v2
+
+docker images
+
+git add .
+
+git commit -m "started project, built the Dockerfile"
+
+git push -u origin docker
+
+git checkout main
+
+git merge docker
+
+git push origin main
+
+git checkout -b pod
+
+minikube status
+
+kubectl apply -f .\pod.yaml
+
+kubectl get pods
+
+kubectl describe pod app-pod
+
+git commit -m "added pod yaml file and md"
+
+git push -u origin pod
+
+git checkout main
+
+git merge pod
+
+git push origin main
+
+kubectl apply -f . (ran both yaml files in my k8s folder)
+
+kubectl get pods
+
+minikube servive app-service
+
+kubectl describe pod app-pod
+
+kubectl logs app-pod
+
+kubectl get all
+
+ps
+
+I did the git pulls and merges all the same for all 5 branches and saved you reading it 5 times over. please be nice
+
